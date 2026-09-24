@@ -332,4 +332,94 @@ O projeto possui algumas validações básicas:
 ### Nome
 
 * Obrigatório
-* Máxim
+* Máximo de 150 caracteres
+
+### CPF
+
+* Obrigatório
+* Máximo de 14 caracteres
+* Não permite CPF duplicado
+
+### E-mail
+
+* Obrigatório
+* Deve possuir formato de e-mail válido
+
+### Data de nascimento
+
+* Obrigatória
+
+### Telefone
+
+* Campo opcional
+* Máximo de 20 caracteres
+
+## Bootstrap
+
+A interface utiliza Bootstrap 5 para estilização.
+
+Os principais componentes utilizados são:
+
+* Navbar
+* Forms
+* Tables
+* Buttons
+* Cards
+* Alerts
+* Badges
+* Grid responsivo
+
+## Melhorias futuras
+
+Este projeto tem objetivo didático e pode ser evoluído para uma aplicação mais completa.
+
+Algumas melhorias possíveis:
+
+* [ ] Persistência em SQL Server
+* [ ] Persistência em PostgreSQL
+* [ ] Repository Pattern
+* [ ] Service Layer
+* [ ] DTOs
+* [ ] ViewModels
+* [ ] FluentValidation
+* [ ] Validação real de CPF
+* [ ] Máscara de CPF
+* [ ] Máscara de telefone
+* [ ] Paginação
+* [ ] Ordenação da listagem
+* [ ] Soft Delete
+* [ ] Auditoria de alterações
+* [ ] Tratamento global de exceções
+* [ ] Logging
+* [ ] Autenticação
+* [ ] Autorização
+* [ ] Testes unitários
+* [ ] Testes de integração
+* [ ] Docker
+* [ ] CI/CD
+
+## Objetivo
+
+O objetivo deste projeto é demonstrar, de forma simples e prática, como construir uma aplicação CRUD utilizando:
+
+```text
+C#
+   +
+.NET 8
+   +
+ASP.NET Core MVC
+   +
+Entity Framework Core
+   +
+InMemory Database
+   +
+Razor
+   +
+Bootstrap
+```
+
+O projeto pode ser utilizado como base para estudos de desenvolvimento web com ASP.NET Core MVC.
+
+## Licença
+
+Este projeto pode ser utilizado livremente para fins de estudo, aprendizado e desenvolvimento de projetos derivados.
