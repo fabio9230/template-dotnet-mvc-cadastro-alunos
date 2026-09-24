@@ -1,0 +1,140 @@
+﻿@model IEnumerable<CadastroAlunos.Models.Aluno>
+
+@{
+    ViewData["Title"] = "Alunos";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Alunos</h1>
+
+    <a asp-action="Create" class="btn btn-primary">
+        Novo Aluno
+    </a>
+</div>
+
+<form asp-action="Index" method="get" class="mb-4">
+    <div class="row">
+
+        <div class="col-md-10">
+            <input type="text"
+                   name="busca"
+                   value="@ViewBag.Busca"
+                   class="form-control"
+                   placeholder="Pesquisar por nome, CPF ou e-mail..." />
+        </div>
+
+        <div class="col-md-2">
+            <button type="submit"
+                    class="btn btn-secondary w-100">
+                Pesquisar
+            </button>
+        </div>
+
+    </div>
+</form>
+
+<div class="card">
+    <div class="card-body p-0">
+
+        <div class="table-responsive">
+
+            <table class="table table-hover table-striped mb-0">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>E-mail</th>
+                        <th>Telefone</th>
+                        <th>Nascimento</th>
+                        <th>Status</th>
+                        <th class="text-end">Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @if (!Model.Any())
+                    {
+                        <tr>
+                            <td colspan="7"
+                                class="text-center py-4">
+                                Nenhum aluno encontrado.
+                            </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        foreach (var aluno in Model)
+                        {
+                            <tr>
+
+                                <td>
+                                    @aluno.Nome
+                                </td>
+
+                                <td>
+                                    @aluno.CPF
+                                </td>
+
+                                <td>
+                                    @aluno.Email
+                                </td>
+
+                                <td>
+                                    @aluno.Telefone
+                                </td>
+
+                                <td>
+                                    @aluno.DataNascimento.ToString("dd/MM/yyyy")
+                                </td>
+
+                                <td>
+                                    @if (aluno.Status)
+                                    {
+                                        <span class="badge bg-success">
+                                            Ativo
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-secondary">
+                                            Inativo
+                                        </span>
+                                    }
+                                </td>
+
+                                <td class="text-end">
+
+                                    <a asp-action="Details"
+                                       asp-route-id="@aluno.Id"
+                                       class="btn btn-sm btn-info text-white">
+                                        Detalhes
+                                    </a>
+
+                                    <a asp-action="Edit"
+                                       asp-route-id="@aluno.Id"
+                                       class="btn btn-sm btn-warning">
+                                        Editar
+                                    </a>
+
+                                    <a asp-action="Delete"
+                                       asp-route-id="@aluno.Id"
+                                       class="btn btn-sm btn-danger">
+                                        Excluir
+                                    </a>
+
+                                </td>
+
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+</div>

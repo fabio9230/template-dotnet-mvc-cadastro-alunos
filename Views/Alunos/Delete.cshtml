@@ -1,0 +1,64 @@
+﻿@model CadastroAlunos.Models.Aluno
+
+@{
+    ViewData["Title"] = "Excluir Aluno";
+}
+
+<h1>Excluir Aluno</h1>
+
+<div class="alert alert-danger">
+    Tem certeza que deseja excluir este aluno?
+</div>
+
+<div class="card mb-3">
+
+    <div class="card-body">
+
+        <dl class="row">
+
+            <dt class="col-sm-3">
+                Nome
+            </dt>
+
+            <dd class="col-sm-9">
+                @Model.Nome
+            </dd>
+
+            <dt class="col-sm-3">
+                CPF
+            </dt>
+
+            <dd class="col-sm-9">
+                @Model.CPF
+            </dd>
+
+            <dt class="col-sm-3">
+                E-mail
+            </dt>
+
+            <dd class="col-sm-9">
+                @Model.Email
+            </dd>
+
+        </dl>
+
+    </div>
+
+</div>
+
+<form asp-action="Delete" method="post">
+
+    <input type="hidden"
+           asp-for="Id" />
+
+    <button type="submit"
+            class="btn btn-danger">
+        Sim, excluir
+    </button>
+
+    <a asp-action="Index"
+       class="btn btn-secondary">
+        Cancelar
+    </a>
+
+</form>
